@@ -1,9 +1,7 @@
-/* Bad example */
-span { ... }
-.page-container #stream .stream-item .tweet .tweet-header .username { ... }
-.avatar { ... }
+/* Bad */
+#tasks-wrapper .tasks > div input[type="text"] { ... }
+.task-item .label { ... }
 
-/* Good example */
-.avatar { ... }
-.tweet-header .username { ... }
-.tweet .avatar { ... }
+/* Good */
+.task-item-edit-title { ... }
+.task-item-label { ... }

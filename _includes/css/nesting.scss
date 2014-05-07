@@ -1,9 +1,36 @@
-// Without nesting
-.table > thead > tr > th { … }
-.table > thead > tr > td { … }
+// Bad
+.tasks-items {
+  // styles
 
-// With nesting
-.table > thead > tr {
-  > th { … }
-  > td { … }
+  > div {
+    // styles
+
+    .selector {
+
+      label {
+        // styles
+
+        &:hover {
+          // styles
+        }
+      }
+    }
+  }
+}
+
+// Good
+.task-items {
+  // styles
+}
+
+.task-item {
+  // styles
+}
+
+.task-item-label {
+  // styles
+
+  &:hover {
+    // styles
+  }
 }

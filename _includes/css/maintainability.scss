@@ -1,0 +1,13 @@
+// Bad example
+
+.segmented .focus-bar-button {
+  // styles
+
+  &.selected:before,
+  &:active:before,
+  &.selected + li:before,
+  &:active + li:before,
+  &:first-child:before {
+    display: none
+  }
+}

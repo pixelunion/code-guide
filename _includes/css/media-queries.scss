@@ -1,0 +1,59 @@
+// Bad example
+
+.element {
+  // styles
+}
+
+.element-header {
+  // styles
+}
+
+@media (min-width: 480px) {
+  .element {
+    // styles
+  }
+
+  .element-header {
+    // styles
+  }
+}
+
+// Good example
+
+.element {
+  // styles
+
+  @media (min-width: 480px) {
+    // styles
+  }
+}
+
+.element-header {
+  // styles
+
+  @media (min-width: 480px) {
+    // styles
+  }
+}
+
+// Example mixin
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 960px) { @content; }
+  }
+  @else if $point == tablet {
+    @media (min-width: 720px) { @content; }
+  }
+  @else if $point == mobile {
+    @media (min-width: 320px)  { @content; }
+  }
+}
+
+.element {
+  // styles
+
+  @include breakpoint(mobile) {
+    // styles
+  }
+}

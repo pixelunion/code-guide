@@ -55,6 +55,17 @@ layout: default
       <li><a href="#coffee-miscellaneous">Miscellaneous</a></li>
     </ul>
   </div>
+  <div class="col">
+    <h4><a href="#git">Git</a></h4>
+    <ul>
+      <li><a href="#git-introduction">An introduction to Git</a></li>
+      <li><a href="#git-setup">Setup</a></li>
+      <li><a href="#git-branches">Branches and Pull Requests</a></li>
+      <li><a href="#git-commits">Commits</a></li>
+      <li><a href="#git-pushing">Pushing</a></li>
+      <li><a href="#git-tagging">Tagging and Releasing</a></li>
+    </ul>
+  </div>
 </div>
 
 
@@ -398,6 +409,9 @@ layout: default
   </div>
 </div>
 
+
+
+
 <div class="heading" id="coffee">
   <h2>CoffeeScript</h2>
 </div>
@@ -646,5 +660,133 @@ layout: default
 
   <div class="col">
     {% highlight coffee %}{% include coffee/miscellaneous.coffee %}{% endhighlight %}
+  </div>
+</div>
+
+
+
+
+<div class="heading" id="git">
+  <h2>Git</h2>
+</div>
+
+<div class="section" id="git-introduction">
+  <div class="col">
+    <h3>An introduction to Git</h3>
+
+    <p>At its most basic, source control gives us the ability to store, share, and transport code and code changes, but the real value comes from the ability to record and replay the stories behind each change during the lifetime of a project.</p>
+
+    <p>This is <em>not</em> an intro to source control or a git how-to: we assume that you have an intermediate understanding of how to use git. If you’re new to git, chapters 2, 3, and 6 (through the section on interactive rebasing) of Scott Chacon’s <a href="http://git-scm.com/book">git book</a> will tell you the how.</p>
+
+    <p>It doesn’t matter if you use git’s commands or a GUI (see <a href="http://mac.github.com">GitHub for Mac</a> and <a href="http://gitboxapp.com">Gitbox</a>), but you need a confident understanding of what’s happening regardless. Knowing the commands often helps.</p>
+  </div>
+
+</div>
+
+<div class="section" id="git-setup">
+  <div class="col">
+    <h3>Setup</h3>
+
+    <p>Things to do right away:</p>
+
+    <ul>
+      <li>Set your author metadata</li>
+      <li>Set branch.autosetuprebase</li>
+      <li>Set push.default</li>
+      <li>Set core.editor (optional)</li>
+    </ul>
+  </div>
+
+  <div class="col">
+    {% highlight bash %}{% include git/setup.txt %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="git-branches">
+  <div class="col">
+    <h3>Branches and Pull Requests</h3>
+
+    <p><strong>Never commit directly to master.</strong> Instead, create small branches for each and every topic you work on (such as a feature or bug fix), and create a pull request into master when the branch is complete.</p>
+
+    <p><em>The exception to this rule is <a href="#git-tagging">version commits and tags</a>.</em></p>
+
+    <h4>Naming</h4>
+
+    <ul>
+      <li>Name branches as concisely as possible, separated by <strong>underscores</strong>.</li>
+      <li>Don't use version numbers</li>
+    </ul>
+
+    <h4>Long-Running Branches</h4>
+
+    <p>If your branch cannot be named as a specific function/feature/bug then you can create a long-running branch with a name like <code>multiple_fixes</code>.</p>
+
+    <p>When using this method, it's important that the commits are <em>clear</em> and minimal (see <a href="#git-comments">Commits</a>).</p>
+  </div>
+
+  <div class="col">
+    {% highlight bash %}{% include git/branches.txt %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="git-commits">
+  <div class="col">
+    <h3>Commits</h3>
+
+    <p>Please read Stephen Ball’s Steel City Ruby 2013 presentation, <a href="http://rakeroutes.com/blog/deliberate-git/">Deliberate Git</a>. It covers this topic very well.</p>
+
+    <p>Once you’ve read it, you’ll understand why you should:</p>
+
+    <ul>
+      <li>Commit small changes frequently. Only you see your local commits, so <code>WIP</code> is fine.</li>
+      <li>Rebase local commits before pushing &amp; pull requesting.</li>
+      <li>Write commit subjects in the present tense and as a command.</li>
+      <li>Describe what the code <em>change</em> does, not what the code does.</li>
+      <li>Explain why the change is necessary.</li>
+      <li>Mention alternatives you considered and potential consequences of your solution.</li>
+    </ul>
+
+    <p>When writing commits:</p>
+
+    <ul>
+      <li>Start with a capitalized word</li>
+      <li>Wrap at 70 characters (tell your editor to do this for you)</li>
+      <li>Spell correctly (optionally, install a precommit spell-checker hook)</li>
+      <li>Include blank lines after the first line and between paragraphs in multi-line messages</li>
+    </ul>
+  </div>
+
+  <div class="col">
+    {% highlight bash %}{% include git/commits.txt %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="git-pushing">
+  <div class="col">
+    <h3>Pushing</h3>
+
+    <p>If you’re pushing a new branch, use the <code>--set-upstream</code> (<code>-u</code>) flag to automatically set the remote branch as your local branch’s tracking branch.</p>
+  </div>
+
+  <div class="col">
+    {% highlight bash %}{% include git/pushing.txt %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="git-tagging">
+  <div class="col">
+    <h3>Tagging and Releasing</h3>
+
+    <p>Versioned libraries, both internal and public, should follow these practices:</p>
+
+    <ul>
+      <li>Use a <code>feature.bugfix.internal</code> numbering scheme</li>
+      <li>Remember to update documentation and version constants</li>
+      <li>Always create and push a tag with the version number, prefixed with a <code>v</code></li>
+</ul>
+  </div>
+
+  <div class="col">
+    {% highlight bash %}{% include git/tagging.txt %}{% endhighlight %}
   </div>
 </div>

@@ -1,0 +1,10 @@
+# Bad
+git checkout -b newBranch
+git checkout -b v0.0.4-dev
+
+# Good
+git checkout -b home_slideshow
+git checkout -b fix_missing_video
+
+# OK
+git checkout -b multiple_fixes

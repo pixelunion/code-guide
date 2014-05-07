@@ -1,0 +1,4 @@
+# on master
+git commit -m "Version bump to v1.1.0"
+git tag -a v1.0.5 -m "Version v1.1.0 release"
+git push && git push --tags

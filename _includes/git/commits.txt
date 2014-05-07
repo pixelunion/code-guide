@@ -1,0 +1,14 @@
+# Bad commit message
+git commit -m "Fix login bug"
+
+# Good commit message
+git commit -m "Redirect user to the requested page after login"
+
+# Great commit message
+git commit
+# opens $EDITOR
+"Redirect user to the requested page after login
+
+Users were being redirected to the home page after login, which is less
+useful than redirecting to the page they had originally requested before
+being redirected to the login form."

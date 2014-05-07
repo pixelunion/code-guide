@@ -1,0 +1,10 @@
+git config --global user.name "Your Name"
+git config --global user.email "name@pixelunion.net"
+
+git config --global branch.autosetuprebase always
+
+git config --global push.default simple
+
+# To avoid waking up in a cold sweat mumbling vi commands...
+# Use Sublime Text 2 (when installed) as your default editor.
+git config --global core.editor "subl -n -w"

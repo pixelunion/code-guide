@@ -55,6 +55,27 @@ layout: default
       <li><a href="#coffee-miscellaneous">Miscellaneous</a></li>
     </ul>
   </div>
+</div>
+<div class="section toc">
+  <div class="col">
+    <h4><a href="#php">PHP</a></h4>
+    <ul>
+      <li><a href="#php-introduction">Introduction</a></li>
+      <li><a href="#php-quotes">Single and Double Quotes</a></li>
+      <li><a href="#php-indentation">Indentation</a></li>
+      <li><a href="#php-brace-style">Brace Style</a></li>
+      <li><a href="#php-regular-expressions">Regular Expressions</a></li>
+      <li><a href="#php-spaces">Space Usage</a></li>
+      <li><a href="#php-sql-statements">Formatting SQL statements</a></li>
+      <li><a href="#php-database-queries">Database Queries</a></li>
+      <li><a href="#php-naming">Naming Conventions</a></li>
+      <li><a href="#php-self-explanatory">Self-Explanatory Flag Values for Function Arguments</a></li>
+      <li><a href="#php-ternary-operator">Ternary Operator</a></li>
+      <li><a href="#php-yoda-conditions">Yoda Conditions</a></li>
+      <li><a href="#php-miscellaneous">Miscellaneous</a></li>
+    </ul>
+  </div>
+
   <div class="col">
     <h4><a href="#git">Git</a></h4>
     <ul>
@@ -663,6 +684,218 @@ layout: default
   </div>
 </div>
 
+
+<div class="heading" id="php">
+  <h2>PHP</h2>
+</div>
+
+<div class="section" id="php-introduction">
+  <div class="col">
+    <h3>PHP and Pixel Union</h3>
+
+    <p>Pixel Union's PHP usage is exclusively on WordPress. We have taken their <a href="http://make.wordpress.org/core/handbook/coding-standards/php/">PHP Coding Standards</a> guide placed it here. Fun.</p>
+
+    <p><strong>Note:</strong></p>
+
+    <blockquote><p>Some parts of the WordPress code structure for PHP markup are inconsistent in their style. WordPress is working to gradually improve this by helping users maintain a consistent style so the code can become clean and easy to read at a glance.</p></blockquote>
+  </div>
+
+</div>
+
+<div class="section" id="php-quotes">
+  <div class="col">
+    <h3>Single and Double Quotes</h3>
+
+    <p>Use single and double quotes when appropriate. If you’re not evaluating anything in the string, use single quotes. You should almost never have to escape quotes in a string, because you can just alternate your quoting style.</p>
+    <p>Text that goes into attributes should be run through <code>esc_attr()</code> so that single or double quotes do not end the attribute value and invalidate the HTML and cause a security issue. See <a href="http://codex.wordpress.org/Data_Validation">Data Validation</a> in the Codex for further details.</p>
+  </div>
+
+  <div class="col">
+    {% highlight php %}{% include php/quotes.php %}{% endhighlight %}
+  </div>
+
+</div>
+
+<div class="section" id="php-indentation">
+  <div class="col">
+    <h3>Indentation</h3>
+
+    <ul>
+      <li>Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.</li>
+      <li>Nested elements should be indented once (two spaces).</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="section" id="php-brace-style">
+  <div class="col">
+    <h3>Brace Style</h3>
+
+    <ul>
+      <li>Braces should always be used, even when they are not required</li>
+      <li>If you have a really long block, consider whether it can be broken into two or more shorter blocks or functions. If you consider such a long block unavoidable, please put a short comment at the end so people can tell at glance what that ending brace ends – typically this is appropriate for a logic block, longer than about 35 rows, but any code that’s not intuitively obvious can be commented</li>
+    </ul>
+  </div>
+
+  <div class="col">
+    {% highlight php %}{% include php/braces.php %}{% endhighlight %}
+  </div>
+
+</div>
+
+<div class="section" id="php-regular-expressions">
+  <div class="col">
+    <h3>Regular Expressions</h3>
+
+    <p>Perl compatible regular expressions (<a href="http://php.net/pcre">PCRE</a>, <code>preg_</code> functions) should be used in preference to their POSIX counterparts. Never use the <code>/e</code> switch, use <code>preg_replace_callback</code> instead.</p>
+    <p>It’s most convenient to use single-quoted strings for regular expressions since, contrary to double-quoted strings, they have only two metasequences: <code>\'</code> and <code>\\</code>.</p>
+
+  </div>
+
+</div>
+
+<div class="section" id="php-spaces">
+  <div class="col">
+    <h3>Space Usage</h3>
+
+    <ul>
+      <li>Always put spaces after commas, and on both sides of logical, comparison, string and assignment operators.</li>
+      <li>Put spaces on both sides of the opening and closing parenthesis of <code>if</code>, <code>elseif</code>, <code>foreach</code>, <code>for</code>, and <code>switch</code> blocks.</li>
+      <li>When referring to array items, only include a space around the index if it is a variable.</li>
+    </ul>
+  </div>
+
+  <div class="col">
+    {% highlight php %}{% include php/spaces.php %}{% endhighlight %}
+  </div>
+
+</div>
+
+<div class="section" id="php-sql-statements">
+  <div class="col">
+    <h3>Formatting SQL statements</h3>
+
+    <p>When formatting SQL statements you may break it into several lines and indent if it is sufficiently complex to warrant it. Most statements work well as one line though. Always capitalize the SQL parts of the statement like <code>UPDATE</code> or <code>WHERE</code>.</p>
+
+    <p>Functions that update the database should expect their parameters to lack SQL slash escaping when passed. Escaping should be done as close to the time of the query as possible, preferably by using <code>$wpdb-&gt;prepare()</code></p>
+
+    <p><code>$wpdb-&gt;prepare()</code> is a method that handles escaping, quoting, and int-casting for SQL queries. It uses a subset of the <code>sprintf()</code> style of formatting.</p>
+
+    <p><code>%s</code> is used for string placeholders and <code>%d</code> is used for integer placeholders. Note that they are not ‘quoted’! <code>$wpdb-&gt;prepare()</code> will take care of escaping and quoting for us. The benefit of this is that we don’t have to remember to manually use <code><a href="http://codex.wordpress.org/Function_Reference/esc_sql">esc_sql</a>()</code>, and also that it is easy to see at a glance whether something has been escaped or not, because it happens right when the query happens.</p>
+
+    <p>See <a title="Data Validation" href="http://codex.wordpress.org/Data_Validation" target="_blank">Data Validation</a> in the Codex for more information.</p>
+  </div>
+
+  <div class="col">
+    {% highlight php %}{% include php/sql-statements.php %}{% endhighlight %}
+  </div>
+
+</div>
+
+<div class="section" id="php-database-queries">
+  <div class="col">
+    <h3>Database Queries</h3>
+
+    <p>Avoid touching the database directly. If there is a defined function that can get the data you need, use it. Database abstraction (using functions instead of queries) helps keep your code forward-compatible and, in cases where results are cached in memory, it can be many times faster.</p>
+
+    <p>If you must touch the database, get in touch with some developers by posting a message to the <a title="wp-hackers mailing list" href="http://codex.wordpress.org/Mailing_Lists#Hackers" target="_blank">wp-hackers mailing list</a>. They may want to consider creating a function for the next WordPress version to cover the functionality you wanted.</p>
+
+  </div>
+</div>
+
+<div class="section" id="php-naming">
+  <div class="col">
+    <h3>Naming Conventions</h3>
+
+    <p>Use lowercase letters in variable, action, and function names (never <code>camelCase</code>). Separate words via underscores. Don’t abbreviate variable names un-necessarily; let the code be unambiguous and self-documenting.</p>
+
+    <ul>
+      <li>Class names should use capitalized words separated by underscores. Any acronyms should be all upper case.</li>
+      <li>Files should be named descriptively using lowercase letters. Hyphens should separate words.</li>
+    </ul>
+
+    <p>Class file names should be based on the class name with <code>class-</code> prepended and the underscores in the class name replaced with hyphens.</p>
+
+    <p>This file-naming standard is for all current and new files with classes. There is one exception for three files that contain code that got ported into BackPress: class.wp-dependencies.php, class.wp-scripts.php, class.wp-styles.php. Those files are prepended with <code>class.</code>, a dot after the word class instead of a hyphen.</p>
+
+    <p>Files containing template tags in <code>wp-includes</code> should have <code>-template</code> appended to the end of the name so that they are obvious.</p>
+  </div>
+
+  <div class="col">
+    {% highlight php %}{% include php/naming.php %}{% endhighlight %}
+  </div>
+
+</div>
+
+<div class="section" id="php-self-explanatory">
+  <div class="col">
+    <h3>Self-Explanatory Flag Values for Function Arguments</h3>
+
+    <p>Prefer string values to just <code>true</code> and <code>false</code> when calling functions.</p>
+
+    <p>Since PHP doesn’t support named arguments, the values of the flags are meaningless, and each time we come across a function call like the examples above, we have to search for the function definition. The code can be made more readable by using descriptive string values, instead of booleans.</p>
+
+  </div>
+
+  <div class="col">
+    {% highlight php %}{% include php/self-explanatory.php %}{% endhighlight %}
+  </div>
+
+</div>
+
+<div class="section" id="php-ternary-operator">
+  <div class="col">
+    <h3>Ternary Operator</h3>
+
+    <p><a title="Ternary" href="http://en.wikipedia.org/wiki/Ternary_operation" target="_blank">Ternary</a> operators are fine, but always have them test if the statement is true, not false. Otherwise, it just gets confusing. (An exception would be using <code>! empty()</code>, as testing for false here is generally more intuitive.)</p>
+
+  </div>
+
+  <div class="col">
+    {% highlight php %}{% include php/ternary.php %}{% endhighlight %}
+  </div>
+
+</div>
+
+<div class="section" id="php-yoda-conditions">
+  <div class="col">
+    <h3>Yoda Conditions</h3>
+
+    <p>When doing logical comparisons, always put the variable on the right side, constants or literals on the left.</p>
+
+    <p>In the above example, if you omit an equals sign (admit it, it happens even to the most seasoned of us), you’ll get a parse error, because you can’t assign to a constant like <code>true</code>. If the statement were the other way around <code>( $the_force = true )</code>, the assignment would be perfectly valid, returning <code>1</code>, causing the if statement to evaluate to <code>true</code>, and you could be chasing that bug for a while.</p>
+
+    <p>A little bizarre, it is, to read. Get used to it, you will.</p>
+
+    <p>This applies to <code>==</code>, <code>!=</code>, <code>===</code>, and <code>!==</code>. Yoda conditions for <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code> or <code>&gt;=</code> are significantly more difficult to read and are best avoided.</p>
+
+  </div>
+
+  <div class="col">
+    {% highlight php %}{% include php/yoda-conditions.php %}{% endhighlight %}
+  </div>
+
+</div>
+
+<div class="section" id="php-miscellaneous">
+  <div class="col">
+    <h3>Miscellaneous</h3>
+
+    <ul>
+      <li>Never use shorthand PHP start tags</li>
+      <li>Always use full PHP tags</li>
+      <li>Remove trailing whitespace at the end of each line of code</li>
+      <li>Omitting the closing PHP tag at the end of a file is preferred</li>
+      <li>In general, readability is more important than cleverness or brevity</li>
+    </ul>
+  </div>
+
+  <div class="col">
+    {% highlight php %}{% include php/miscellaneous.php %}{% endhighlight %}
+  </div>
+
+</div>
 
 
 

@@ -6,6 +6,24 @@ Code Guide is a project for documenting standards for developing flexible, durab
 
 ---
 
+## Local GitHub Pages
+
+If you want to contribute to the guide but want to check out how it's going to look first you can fire it up locally with Jekyll.
+
+1. Install Jekyll
+
+    ```bash
+    gem install jekyll
+    ```
+
+2. Run the server
+
+    ```bash
+    jekyll serve --watch
+    ```
+
+Done! You can now navigate to `http://0.0.0.0:4000` (note: Jekyll will tell you where to look if it doesn't use that for your machine) and see the GitHub pages.
+
 ### License
 
 Released under MIT by, and copyright 2014, @mdo.

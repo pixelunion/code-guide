@@ -2,3 +2,13 @@
 git commit -m "Version bump to v1.1.0"
 git tag -a v1.0.5 -m "Version v1.1.0 release"
 git push && git push --tags
+
+# Bump helper
+# Place this in your bash profile or .zshrc
+bump() { git commit -m "Bump to $1" && git tag -a $1 -m "Bump version $1" }
+
+# ooo, that's snazzy
+# use it like this:
+git add <your files>
+bump v1.1.0
+git push && git push --tags

@@ -72,6 +72,7 @@ layout: default
       <li><a href="#php-quotes">Single and Double Quotes</a></li>
       <li><a href="#php-indentation">Indentation</a></li>
       <li><a href="#php-brace-style">Brace Style</a></li>
+      <li><a href="#php-function-guards">Function Guards</a></li>
       <li><a href="#php-regular-expressions">Regular Expressions</a></li>
       <li><a href="#php-spaces">Space Usage</a></li>
       <li><a href="#php-sql-statements">Formatting SQL statements</a></li>
@@ -794,11 +795,25 @@ layout: default
     <ul>
       <li>Braces should always be used, even when they are not required</li>
       <li>If you have a really long block, consider whether it can be broken into two or more shorter blocks or functions. If you consider such a long block unavoidable, please put a short comment at the end so people can tell at glance what that ending brace ends – typically this is appropriate for a logic block, longer than about 35 rows, but any code that’s not intuitively obvious can be commented</li>
+      <li>Template files should use the <a href="http://www.php.net//manual/en/control-structures.alternative-syntax.php">alternative syntax for control structures</a>.
     </ul>
   </div>
 
   <div class="col">
     {% highlight php %}{% include php/braces.php %}{% endhighlight %}
+  </div>
+
+</div>
+
+<div class="section" id="php-function-guards">
+  <div class="col">
+    <h3>Function Guards</h3>
+
+    <p>Most theme-specific functions should be wrapped in a <code>function_exists</code> test to allow child themes to override them. The function guard should use the alternative <code>if endif</code> syntax.</p>
+  </div>
+
+  <div class="col">
+  {% highlight php %}{% include php/guards.php %}{% endhighlight %}
   </div>
 
 </div>

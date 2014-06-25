@@ -1,0 +1,13 @@
+// Variable names should describe the purpose or function
+
+$red: red; // Bad
+$yellow: yellow; // Bad
+
+$brand-color: red; // Good
+$accent-color: yellow; // Good
+
+// Use hyphens to separate multiple words
+
+$badVariable: red; // Bad
+$bad_variable: red; // Bad
+$good-variable: red; // Good

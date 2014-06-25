@@ -37,6 +37,7 @@ layout: default
       <li><a href="#sass-syntax">Syntax</a></li>
       <li><a href="#sass-selectors">Selectors</a></li>
       <li><a href="#sass-nesting">Nesting</a></li>
+      <li><a href="#sass-variables">Variables</a></li>
       <li><a href="#sass-comments">Comments</a></li>
       <li><a href="#sass-media-queries">Media query placement</a></li>
       <li><a href="#sass-single-declarations">Rules with single declarations</a></li>
@@ -373,6 +374,21 @@ layout: default
   </div>
   <div class="col">
     {% highlight scss %}{% include css/nesting.scss %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-variables">
+  <div class="col">
+    <h3>Variables</h3>
+    <p>Variables in Sass are a powerful way to define values in one place that can be reused in multiple places in your project. They allow you to make changes from a central point without needing to use find and replace across multiple files and directories. <a href="http://thesassway.com/beginner/variable-naming">[ref]</a></p>
+    <ul>
+      <li>Names should be descriptive of purpose or function, not of the value.</li>
+      <li>Multi-word variables should be separated by hyphens.</li>
+      <li>Keep variables in a centralized file. For our Shopify themes, that's <code>_user-settings.scss</code>.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight scss %}{% include css/sass-variables.scss %}{% endhighlight %}
   </div>
 </div>
 

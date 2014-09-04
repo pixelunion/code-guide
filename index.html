@@ -38,6 +38,7 @@ layout: default
       <li><a href="#sass-selectors">Selectors</a></li>
       <li><a href="#sass-nesting">Nesting</a></li>
       <li><a href="#sass-variables">Variables</a></li>
+      <li><a href="#sass-includes-extends">@includes vs @extends</a></li>
       <li><a href="#sass-comments">Comments</a></li>
       <li><a href="#sass-media-queries">Media query placement</a></li>
       <li><a href="#sass-single-declarations">Rules with single declarations</a></li>
@@ -389,6 +390,43 @@ layout: default
   </div>
   <div class="col">
     {% highlight scss %}{% include css/sass-variables.scss %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-includes-extends">
+  <div class="col">
+    <h3>@include vs @extend</h3>
+
+    <p>First, some basics:</p>
+
+    <ul>
+      <li>The <strong>@extend</strong> directive tells Sass that one selector should inherit the styles of another selector.</li>
+      <li>The <strong>@include</strong> directive takes the name of a mixin and optionally arguments to pass to it, and includes the styles defined by that mixin into the current rule.</li>
+    </ul>
+
+    <h4>When to use @extend</h4>
+
+    <p>This should be your first plan of attack. Using an @extend limits customizability but produces a more efficient CSS file. Smaller is better.</p>
+
+    <h4>When to use @include</h4>
+
+    <p>If you need to overwrite declarations of an @extend or need to pass values to it then you'll want to set up a mixin and use @include instead. Mixins are powerful and are generally used to accomplish complicated or labor-intensive tasks. Some examples:</p>
+
+    <ul>
+      <li>wrapping content in another class / query (IE, retina, etc)</li>
+      <li><a href="http://bourbon.io/docs/#placeholder">placeholders</a></li>
+      <li>avoiding browser prefixes new CSS3 properties, such as:
+        <ul>
+          <li><a href="http://bourbon.io/docs/#animation">animations</a></li>
+          <li><a href="http://bourbon.io/docs/#transitions">transitions</a></li>
+          <li><a href="http://bourbon.io/docs/#flexbox">flexbox</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+  <div class="col">
+    {% highlight scss %}{% include css/includes_extends.scss %}{% endhighlight %}
   </div>
 </div>
 

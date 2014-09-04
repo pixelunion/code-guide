@@ -1,0 +1,27 @@
+/* Extend a class */
+.error {
+  color: red;
+
+  &:hover {
+    color: darken(red, 5%);
+  }
+}
+
+.my-element {
+  @extend .error;
+}
+
+/* Create a mixin and include it somewhere else */
+@mixin icon-font($font-size: 16px) {
+  font-family: "Icon Font";
+  font-weight: normal;
+  font-size: $font-size;
+}
+
+.icon {
+  @include icon-font();
+}
+
+.large-icon {
+  @include icon-font(20px);
+}

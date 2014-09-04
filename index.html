@@ -95,6 +95,7 @@ layout: default
       <li><a href="#git-branches">Branches and Pull Requests</a></li>
       <li><a href="#git-commits">Commits</a></li>
       <li><a href="#git-pushing">Pushing</a></li>
+      <li><a href="#git-merging">Merging</a></li>
       <li><a href="#git-tagging">Tagging and Releasing</a></li>
     </ul>
   </div>
@@ -1131,6 +1132,20 @@ layout: default
 
   <div class="col">
     {% highlight bash %}{% include git/pushing.txt %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="git-merging">
+  <div class="col">
+    <h3>Merging</h3>
+
+    <p>So your pull request has been peer-reviewed and approved – nice work! Now it's time to merge your changes into master.</p>
+
+    <p>You want to use a fast-forward merge (<code>git merge --ff-only</code>). Merging this way prevents "merge bubbles" where commit messages are created that say that a branch has been merged. This is called a recursive merge and it muddies up the commit history.</p>
+  </div>
+
+  <div class="col">
+    {% highlight bash %}{% include git/merging.txt %}{% endhighlight %}
   </div>
 </div>
 

@@ -1,0 +1,19 @@
+# fast-forward merge
+git checkout master
+git merge --ff-only your_branch
+
+# Didn't let you do it? No problem, it probably means that your
+# branch is out of date. In other words, master has been updated
+# since you originally branched off of it.
+git checkout your_branch
+git rebase master
+git push -f
+git checkout master
+git merge --ff-only your_branch
+
+# Whoa, did you just force push and re-write history?
+# Ya, I did. At Pixel Union a branch is your own. You own it. It's your baby.
+# If somebody was working on your branch, you'd know about it because they
+# would have talked to you.
+
+# Special note: never re-write master's history.

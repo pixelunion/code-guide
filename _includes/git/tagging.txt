@@ -6,7 +6,7 @@ git push && git push --tags
 
 # Bump helper
 # Place this in your bash profile or .zshrc
-bump() { git commit -m "Bump to $1" && git tag -a $1 -m "Bump version $1" }
+bump() { git commit -m "Bump to $1" && git tag -a $1 -m "Bump version $1"; }
 
 # ooo, that's snazzy
 # use it like this:

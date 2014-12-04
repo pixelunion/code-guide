@@ -1,0 +1,14 @@
+{% raw %}
+
+<!-- console.log() an object with the `| json` filter -->
+<script charset="utf-8">
+  console.log({{ someObject | json }});
+</script>
+
+<!-- create a theme settings javascript object -->
+<script charset="utf-8">
+  window.ThemeName = {};
+  ThemeName.settings = {{ settings | json }};
+</script>
+
+{% endraw %}

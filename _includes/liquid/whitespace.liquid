@@ -1,0 +1,16 @@
+{% raw %}
+
+{% if boolean %} <!-- Yes -->
+{%if boolean%} <!-- No -->
+
+<!-- Yes -->
+{% unless string == 'foobar' %}
+  {{ string }}
+{% endunless %}
+
+<!-- No -->
+{%unless string=='foobar' %}
+{{string}}
+{%endunless%}
+
+{% endraw %}

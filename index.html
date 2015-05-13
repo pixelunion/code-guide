@@ -101,6 +101,7 @@ layout: default
     <h4><a href="#git">Git</a></h4>
     <ul>
       <li><a href="#git-introduction">An introduction to Git</a></li>
+      <li><a href="#git-repos">Repo Naming</a></li>
       <li><a href="#git-setup">Setup</a></li>
       <li><a href="#git-branches">Branches and Pull Requests</a></li>
       <li><a href="#git-commits">Commits</a></li>
@@ -1135,7 +1136,23 @@ layout: default
 
     <p>It doesn’t matter if you use git’s commands or a GUI (see <a href="http://mac.github.com">GitHub for Mac</a> and <a href="http://gitboxapp.com">Gitbox</a>), but you need a confident understanding of what’s happening regardless. Knowing the commands often helps.</p>
   </div>
+</div>
 
+<div class="section" id="git-repos">
+  <div class="col">
+    <h3>Repo Naming</h3>
+    <p>To keep our many repositories easy to find we follow a simple naming convention:</p>
+    <ul>
+      <li>Names are all lowercase, with hyphens as separators.</li>
+      <li>Themes are suffixed by their platform: -shopify, -wp, -tumblr, -ghost.</li>
+      <li>Tools are prefixed by their platform: wp-calcium, shopify-skeleton.</li>
+      <li>Theme forks for client customizations are named theme-client-platform.</li>
+    </ul>
+  </div>
+
+  <div class="col">
+    {% highlight bash %}{% include git/repos.txt %}{% endhighlight %}
+  </div>
 </div>
 
 <div class="section" id="git-setup">
@@ -1252,7 +1269,7 @@ layout: default
       <li>Use a <code>major_feature.minor_feature/major_bugfix.minor_bugfix</code> numbering scheme</li>
       <li>Remember to update documentation and version constants</li>
       <li>Always create and push a tag with the version number, prefixed with a <code>v</code></li>
-</ul>
+    </ul>
   </div>
 
   <div class="col">

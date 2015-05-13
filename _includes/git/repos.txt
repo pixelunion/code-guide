@@ -1,0 +1,23 @@
+# Platforms
+
+Shopify      shopify
+WordPress    wp
+Tumblr       tumblr
+Ghost        ghost
+
+# Examples
+
+grid-shopify
+  The Grid Shopify theme.
+
+bindery-wp
+  The Bindery WordPress theme.
+
+shopify-skeleton
+  Our shopify theme framework.
+
+wp-calcium
+  Our WordPress build system.
+
+grid-johndoe-shopify
+  A customization of the Grid Shopify theme for John Doe (a client).

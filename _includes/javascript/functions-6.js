@@ -14,7 +14,7 @@ function handleThings(options = {}) {
 
 // good
 function handleThings(options = {}) {
-  this.options = Object.assign({}, options, {
-    valueA: 'AAA',
-  });
+  this.options = Object.assign({}, {
+    valueA: 'AAA', // defaults
+  }, options);
 }

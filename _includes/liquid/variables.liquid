@@ -1,20 +1,20 @@
 {% raw %}
 
 <!-- Yes -->
-{% assign someBoolean = true %}
-{% capture someString %}This is a string.{% endcapture %}
+{% assign some_boolean = true %}
+{% capture some_string %}This is a string.{% endcapture %}
 
 <!-- No -->
 {% assign some-boolean = true %}
-{% assign please_no = true %}
-{% capture silly_string %}This is a string.{% endcapture %}
+{% assign pleaseNo = true %}
+{% capture sillyString %}This is a string.{% endcapture %}
 
 <!-- Move verbose logic into a variable -->
-{% assign slidesClass = 'no-slides' %}
-{% if settings.slide-1 or settings.slide-2 or settings.slide-3 or settings.slide-4 or settings.slide-5 %}
-  {% assign slidesClass = 'has-slides' %}
+{% assign slides_class = 'no-slides' %}
+{% if settings.slide_1 or settings.slide_2 or settings.slide_3 or settings.slide_4 or settings.slide_5 %}
+  {% assign slides_class = 'has-slides' %}
 {% endif %}
 
-<body class="{{ slidesClass }}">
+<body class="{{ slides_class }}">
 
 {% endraw %}

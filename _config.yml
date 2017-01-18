@@ -4,4 +4,4 @@ url:           http://pixelunion.github.io/code-guide/
 
 markdown:      rdiscount
 permalink:     pretty
-pygments:      true
+highlighter:   rouge

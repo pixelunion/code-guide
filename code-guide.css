@@ -2,10 +2,35 @@
 layout: nil
 ---
 
-
 /*
  * Fonts
  */
+
+@font-face {
+  font-family: "Circular";
+  src:url("https://www.pixelunion.net/wp-content/themes/pixelunion/fonts/lineto-circular-book.eot");
+  src:url("https://www.pixelunion.net/wp-content/themes/pixelunion/fonts/lineto-circular-book.eot#iefix") format("embedded-opentype"),
+    url("https://www.pixelunion.net/wp-content/themes/pixelunion/fonts/lineto-circular-book.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Circular";
+  src:url("https://www.pixelunion.net/wp-content/themes/pixelunion/fonts/lineto-circular-bookItalic.eot");
+  src:url("https://www.pixelunion.net/wp-content/themes/pixelunion/fonts/lineto-circular-bookItalic.eot?#iefix") format("embedded-opentype"),
+    url("https://www.pixelunion.net/wp-content/themes/pixelunion/fonts/lineto-circular-bookItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://www.pixelunion.net/wp-content/themes/pixelunion/fonts/lineto-circular-bold.eot");
+  src: url("https://www.pixelunion.net/wp-content/themes/pixelunion/fonts/lineto-circular-bold.eot?#iefix") format("embedded-opentype"),
+    url("https://www.pixelunion.net/wp-content/themes/pixelunion/fonts/lineto-circular-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal; }
 
 @font-face {
   font-family: 'fontello';
@@ -43,33 +68,36 @@ layout: nil
 html {
   font-size: 16px;
 }
+
 @media (min-width: 48em) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 body {
   margin: 0;
-  font: 1rem/1.5 "PT Sans", sans-serif;
-  color: #5a5a5a;
+  font: 1rem/1.5 "Circular", sans-serif;
+  color: #42465f;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: #08c;
+  color: #04DBC0;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
 h1, h2, h3, h4 {
-  margin: 0 0 .5rem;
-  font-weight: normal;
+  margin: 0 0 0.75rem;
+  font-weight: 700;
   line-height: 1;
-  color: #2a2a2a;
-  letter-spacing: -.05em;
+  color: #42465f;
 }
+
 h1 { font-size: 3rem; }
 h2 { font-size: 2.5rem; }
 h3 { font-size: 1.75rem; }
@@ -78,6 +106,7 @@ h4 { font-size: 1.25rem }
 p {
   margin: 0 0 1rem;
 }
+
 .lead {
   font-size: 1.3rem;
 }
@@ -88,6 +117,7 @@ blockquote {
   font-style: italic;
   color: #7a7a7a;
 }
+
 blockquote p {
   margin-bottom: 0;
 }
@@ -111,12 +141,12 @@ blockquote:last-child{
 
 code,
 pre {
-  font-family: "PT Mono", Menlo, "Courier New", monospace;
-  font-size: 95%;
+  font-family: "Anonymous Pro", Menlo, "Courier New", monospace;
+  -webkit-font-smoothing: auto;
 }
+
 code {
   padding: 2px 4px;
-  font-size: 85%;
   color: #d44950;
   background-color: #f7f7f9;
   border-radius: .2rem;
@@ -153,18 +183,22 @@ pre code {
 .col {
   padding: 2rem 1rem;
 }
+
 .col p {
   max-width: 40rem;
 }
+
 .col + .col {
-  border-top: 1px solid #dfe1e8;
-  background-color: #f7f7f9;
+  border-top: 3px solid #EDEEF4;
+  background-color: #F5F6FA;
 }
+
 @media (min-width: 38em) {
   .col {
     padding: 2rem;
   }
 }
+
 @media (min-width: 48em) {
   .section {
     display: table;
@@ -182,6 +216,11 @@ pre code {
 }
 
 /* Make the ToC a whole section */
+.toc {
+  max-width: 1200px;
+  margin: auto;
+}
+
 .toc .col + .col {
   background-color: #fff;
 }
@@ -201,29 +240,37 @@ pre code {
 
 .masthead {
   padding: 3rem 1rem;
-  color: rgba(255,255,255,.5);
   text-align: center;
-  background-color: #2a3440;
 }
+
+.masthead a:hover {
+  text-decoration: none;
+}
+
 .masthead h1 {
-  color: #fff;
   margin-bottom: .25rem;
 }
+
 .masthead .icon {
   display: inline-block;
   font-size: 3rem;
   margin: 0 .5rem;
 }
+
 .masthead-links {
   font-size: 2rem;
 }
+
 .masthead-links a {
   color: rgba(255,255,255,.5);
   text-decoration: none;
+  border: 0;
   transition: all .15s linear;
 }
+
 .masthead-links a:hover {
   color: #fff;
+  border: 0;
 }
 
 @media (min-width: 38em) {
@@ -240,7 +287,7 @@ pre code {
 
 .heading {
   padding: 2rem 1rem 1.5rem;
-  background-color: #dfe1e8;
+  background-color: #EDEEF4;
 }
 
 @media (min-width: 38em) {
@@ -250,7 +297,7 @@ pre code {
 }
 
 .section {
-  border-bottom: 1px solid #dfe1e8;
+  border-bottom: 3px solid #EDEEF4;
 }
 
 

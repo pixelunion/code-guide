@@ -1,0 +1,316 @@
+<div class="heading" id="liquid">
+  <h2>Liquid</h2>
+</div>
+
+<div class="section" id="liquid-intro">
+  <div class="col">
+    <h3>In Introduction to Shopify</h3>
+    <p>Shopify is the only platform that we develop for that uses Liquid. Fortunately, they've done a great job on <a href="http://docs.shopify.com/themes">documentation</a> and almost all of the info that you need can be found there.</p>
+
+    <ul>
+      <li><a href="http://docs.shopify.com/themes/liquid-documentation/basics">Basics</a></li>
+      <li><a href="http://docs.shopify.com/themes/liquid-documentation/tags">Tags</a></li>
+      <li><a href="http://docs.shopify.com/themes/liquid-documentation/objects">Objects</a></li>
+      <li><a href="http://docs.shopify.com/themes/liquid-documentation/filters">Filters</a></li>
+    </ul>
+
+    <p>The <strong>Objects</strong> link above is almost certainly the most important resource available to you when writing code for Shopify. It contains every single object you might come across during development and all of the values attached to them.</p>
+  </div>
+</div>
+
+<div class="section" id="liquid-syntax">
+  <div class="col">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.</li>
+      <li>Nested elements should be indented once (two spaces).</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight liquid %}{% include liquid/syntax.liquid %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="liquid-whitespace">
+  <div class="col">
+    <h3>Whitespace in Expressions and Statements</h3>
+    <ul>
+      <li>Always surround these binary operators with a single space on either side:
+        <ul>
+          <li>assignment: <code>=</code></li>
+          <li>comparisons: <code>==</code>, <code>!=</code>, <code><</code>, <code>></code>, etc.</li>
+          <li>conditionals: <code>if</code>, <code>unless</code>, <code>and</code>, <code>or</code></li>
+          <li>filters: <code>|</code>, <code>minus:</code>, <code>divided_by:</code>, <code>strip</code></li>
+          <li>braces: <code>{% raw %}{{ }}{% endraw %}</code>, <code>{% raw %}{% %}{% endraw %}</code></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight liquid %}{% include liquid/whitespace.liquid %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="liquid-variables">
+  <div class="col">
+    <h3>Variables</h3>
+    <ul>
+      <li>always assign and capture variables in camelCase</li>
+      <li>only assign a variable if it:
+        <ol>
+          <li>is used more than once on a page</li>
+          <li>reduces line length and confusion where it gets outputted</li>
+        </ol>
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight liquid %}{% include liquid/variables.liquid %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="liquid-debugging">
+  <div class="col">
+    <h3>Debugging Tips</h3>
+
+    <ul>
+      <li>double check that Shopify is returning the correct data with the <code>json</code> filter</li>
+      <li>make sure the theme settings page isn't lying to you by creating a Theme Settings Javascript object</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight liquid %}{% include liquid/debugging.liquid %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="heading" id="sass">
+  <h2>Sass</h2>
+</div>
+
+<div class="section" id="sass-syntax">
+  <div class="col">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.</li>
+      <li>When grouping selectors, keep individual selectors to a single line.</li>
+      <li>Include one space before the opening brace of declaration blocks for legibility.</li>
+      <li>Place closing braces of declaration blocks on a new line.</li>
+      <li>Include one space after <code>:</code> for each declaration.</li>
+      <li>Each declaration should appear on its own line for more accurate error reporting.</li>
+      <li>End all declarations with a semi-colon, even the last one</li>
+      <li>Comma-separated property values should include a space after each comma (e.g., <code>box-shadow</code>).</li>
+      <li>Don't include spaces after commas <em>within</em> <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, or <code>rect()</code> values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space).</li>
+      <li>Prefix property values or color parameters with a leading zero (e.g., <code>0.5</code> instead of <code>.5</code> and <code>-0.5px</code> instead of <code>-.5px</code>).</li>
+      <li>Lowercase all hex values, e.g., <code>#fff</code>. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.</li>
+      <li>Use shorthand hex values where available, e.g., <code>#fff</code> instead of <code>#ffffff</code>.</li>
+      <li>Quote attribute values in selectors, e.g., <code>input[type="text"]</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">They’re only optional in some cases</a>, and it’s a good practice for consistency.</li>
+      <li>Avoid specifying units for zero values, e.g., <code>margin: 0;</code> instead of <code>margin: 0px;</code>.</li>
+    </ul>
+    <p>Questions on the terms used here? See the <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">syntax section of the Cascading Style Sheets article</a> on Wikipedia.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/syntax.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-selectors">
+  <div class="col">
+    <h3>Selectors</h3>
+    <ul>
+      <li>Use classes over generic element tag or IDs for optimum rendering performance.</li>
+      <li>Prefer descriptive class names to descendent selectors.</li>
+      <li>Avoid using several attribute selectors (e.g., <code>[class^="..."]</code>) on commonly occuring components. Browser performance is known to be impacted by these.</li>
+      <li>Keep selectors short and strive to limit the number of elements in each selector to three.</li>
+      <li>Scope classes to the closest parent <strong>only</strong> when necessary (e.g., when not using prefixed classes).</li>
+    </ul>
+    <p>Additional reading:</p>
+    <ul>
+      <li><a href="http://markdotto.com/2012/02/16/scope-css-classes-with-prefixes/">Scope CSS classes with prefixes</a></li>
+      <li><a href="http://markdotto.com/2012/03/02/stop-the-cascade/">Stop the cascade</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/selectors.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-nesting">
+  <div class="col">
+    <h3>Nesting</h3>
+    <p>Nesting is very helpful to define element states such as active and hover, pseudo elements like before and after, and minimal child selectors that don't justify an additional class name.</p>
+    <ul>
+      <li>Avoid unnecessary nesting. Just because you can nest, doesn't mean you always should.</li>
+      <li>At a maximum, nesting should only go three levels deep.</li>
+      <li>Maximum amount of nested lines is 60. Your entire nest should be visible on a laptop's screen.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight scss %}{% include css/nesting.scss %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-variables">
+  <div class="col">
+    <h3>Variables</h3>
+    <p>Variables in Sass are a powerful way to define values in one place that can be reused in multiple places in your project. They allow you to make changes from a central point without needing to use find and replace across multiple files and directories. <a href="http://thesassway.com/beginner/variable-naming">[ref]</a></p>
+    <ul>
+      <li>Names should be descriptive of purpose or function, not of the value.</li>
+      <li>Multi-word variables should be separated by hyphens.</li>
+      <li>Keep variables in a centralized file. For our Shopify themes, that's <code>_user-settings.scss</code>.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight scss %}{% include css/sass-variables.scss %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-includes-extends">
+  <div class="col">
+    <h3>@include vs @extend</h3>
+
+    <p>First, some basics:</p>
+
+    <ul>
+      <li>The <strong>@extend</strong> directive tells Sass that one selector should inherit the styles of another selector.</li>
+      <li>The <strong>@include</strong> directive takes the name of a mixin and optionally arguments to pass to it, and includes the styles defined by that mixin into the current rule.</li>
+    </ul>
+
+    <h4>When to use @extend</h4>
+
+    <p>This should be your first plan of attack. Using an @extend limits customizability but produces a more efficient CSS file. Smaller is better.</p>
+
+    <h4>When to use @include</h4>
+
+    <p>If you need to overwrite declarations of an @extend or need to pass values to it then you'll want to set up a mixin and use @include instead. Mixins are powerful and are generally used to accomplish complicated or labor-intensive tasks. Some examples:</p>
+
+    <ul>
+      <li>wrapping content in another class / query (IE, retina, etc)</li>
+      <li><a href="http://bourbon.io/docs/#placeholder">placeholders</a></li>
+      <li>avoiding browser prefixes new CSS3 properties, such as:
+        <ul>
+          <li><a href="http://bourbon.io/docs/#animation">animations</a></li>
+          <li><a href="http://bourbon.io/docs/#transitions">transitions</a></li>
+          <li><a href="http://bourbon.io/docs/#flexbox">flexbox</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+  <div class="col">
+    {% highlight scss %}{% include css/includes_extends.scss %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-comments">
+  <div class="col">
+    <h3>Comments</h3>
+    <p>Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name.</p>
+    <p>Be sure to write in complete sentences for larger comments and succinct phrases for general notes.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/comments.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-media-queries">
+  <div class="col">
+    <h3>Media query placement</h3>
+    <p>Place media queries inside their respective selector. Don't have entire blocks of code dedicated to a single media query.</p>
+
+    <p>Feel free to create a media query mixin to simplify modifying your queries.</p>
+  </div>
+  <div class="col">
+    {% highlight scss %}{% include css/media-queries.scss %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-single-declarations">
+  <div class="col">
+    <h3>Single declarations</h3>
+    <p>In instances where a rule set includes <strong>only one declaration</strong>, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines.</p>
+    <p>The key factor here is error detection—e.g., a CSS validator stating you have a syntax error on Line 183. With a single declaration, there's no missing it. With multiple declarations, separate lines is a must for your sanity.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/single-declarations.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-shorthand">
+  <div class="col">
+    <h3>Shorthand notation</h3>
+    <p>Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values. Common overused shorthand properties include:</p>
+    <ul>
+      <li><code>padding</code></li>
+      <li><code>margin</code></li>
+      <li><code>font</code></li>
+      <li><code>background</code></li>
+      <li><code>border</code></li>
+      <li><code>border-radius</code></li>
+    </ul>
+    <p>Often times we don't need to set all the values a shorthand property represents. For example, HTML headings only set top and bottom margin, so when necessary, only override those two values. Excessive use of shorthand properties often leads to sloppier code with unnecessary overrides and unintended side effects.</p>
+    <p>The Mozilla Developer Network has a great article on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand properties</a> for those unfamiliar with notation and behavior.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/shorthand.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-classes">
+  <div class="col">
+    <h3>Class names</h3>
+    <ul>
+      <li>Keep classes lowercase and use dashes (not underscores or camelCase). Dashes serve as natural breaks in related class (e.g., <code>.btn</code> and <code>.btn-danger</code>).</li>
+      <li><a href="http://markdotto.com/2012/02/16/scope-css-classes-with-prefixes/">Scope CSS classes with prefixes</a>.</li>
+      <li>Avoid excessive and arbitrary shorthand notation. <code>.btn</code> is useful for <em>button</em>, but <code>.s</code> doesn't mean anything.</li>
+      <li>Keep classes as short and succinct as possible.</li>
+      <li>Use meaningful names; use structural or purposeful names over presentational.</li>
+      <li>Use <code>.js-*</code> classes to denote behavior (as opposed to style), but keep these classes out of your CSS.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/class-names.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-organization">
+  <div class="col">
+    <h3>Organization</h3>
+    <p>Thanks to compilation and compression, we're able to organize styles into many small files without impacting the end user. Rules should be organized into small sets corresponding to the elements they style. Styles of unrelated elements should never be in the same file.</p>
+    <ul>
+      <li>Organize sections of code by component.</li>
+      <li>Develop a consistent commenting hierarchy.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section" id="sass-maintainability">
+  <div class="col">
+    <h3>Maintainability</h3>
+    <p>Consider the example on the right.</p>
+
+    <p>This rule obviously hides something, but it's not clear what it's hiding, or why. This code is unmaintainable, because its purpose is not obvious. Strive to write selectors and styles whose purpose and relationship is intuitive and obvious.</p>
+  </div>
+  <div class="col">
+    {% highlight scss %}{% include css/maintainability.scss %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="sass-declaration-order">
+  <div class="col">
+    <h3>Declaration order</h3>
+    <p><strong>Recommended</strong> only. During the course of development this might not be realistic. Try to keep the following recommendations in mind.</p>
+    <p>Related property declarations should be grouped together following the order:</p>
+    <ol>
+      <li>Positioning</li>
+      <li>Box model</li>
+      <li>Typographic</li>
+      <li>Visual</li>
+    </ol>
+    <p>Positioning comes first because it can remove an element from the normal flow of the document and override box model related styles. The box model comes next as it dictates a component's dimensions and placement.</p>
+    <p>Everything else takes place <em>inside</em> the component or without impacting the previous two sections, and thus they come last.</p>
+    <p>For a complete list of properties and their order, please see <a href="http://twitter.github.com/recess">Recess</a>.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/declaration-order.css %}{% endhighlight %}
+  </div>
+</div>

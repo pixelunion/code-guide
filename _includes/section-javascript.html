@@ -1,0 +1,722 @@
+<div class="heading" id="javascript">
+  <h2>JavaScript (ES6)</h2>
+</div>
+
+<div class="section" id="javascript-whitespace">
+  <div class="col">
+    <h3>Syntax</h3>
+
+    <p>Use spaces only, with <strong>2 spaces</strong> per indentation level. Never mix tabs and spaces.</p>
+    <p>Try your best to limit all lines to a maximum of 80 characters. Do not ever go over 120.</p>
+    <p>Do not include trailing whitespace on any lines.</p>
+    <p>Use only unix-style newlines. <code>\n</code> not <code>\r\n</code>.</p>
+    <p>Use UTF-8 as the source file encoding.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/whitespace-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Place <strong>1</strong> space before the leading brace.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/whitespace-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Place <strong>1</strong> space before the opening parenthesis in control statements (<code>if</code>, <code>while</code> etc.). Place no space before the argument list in function calls and declarations.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/whitespace-3.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Set off operators with spaces.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/whitespace-4.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>End files with a single newline character.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/whitespace-5.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Leave a blank line after blocks and before the next statement.</p>
+    <p>Use a single blank line within the bodies of methods or functions in cases where this improves readability (e.g., for the purpose of delineating logical sections).</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/whitespace-6.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Do not use leading commas.</p>
+    <p>Use additional trailing commas.</p>
+    <p>This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don't have to worry about the <a href="https://github.com/airbnb/javascript/blob/master/es5/README.md#commas">trailing comma problem</a> in legacy browsers.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/whitespace-7.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Always use explicit semicolons.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/whitespace-8.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use braces with all multi-line blocks.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/whitespace-9.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>If you're using multi-line blocks with if and else, put else on the same line as your if block's closing brace.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/whitespace-10.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-variables">
+  <div class="col">
+    <h3>Variables</h3>
+
+    <p>Use <code>const</code> for all of your references; avoid using <code>var</code>.</p>
+    <p>This ensures that you can't reassign your references (mutation), which can lead to bugs and difficult to comprehend code.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/variables-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>If you must mutate references, use <code>let</code> instead of <code>var</code>.</p>
+    <p><code>let</code> is block-scoped rather than function-scoped like <code>var</code>.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/variables-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Note that both <code>let</code> and <code>const</code> are block-scoped.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/variables-3.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use one <code>const</code>/<code>let</code> declaration per variable.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/variables-4.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Group all your <code>const</code>s and then group all your <code>let</code>s.</p>
+    <p>This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/variables-5.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-comparison">
+  <div class="col">
+    <h3>Comparison Operators &amp; Equality</h3>
+
+    <p>Use <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code>.</p>
+
+    <p>Conditional statements such as the if statement evaulate their expression using coercion with the <code>ToBoolean</code> abstract method and always follow these simple rules:</p>
+
+    <ul>
+      <li>Objects evaluate to <code>true</code></li>
+      <li>Undefined evaluates to <code>false</code></li>
+      <li>Null evaluates to <code>false</code></li>
+      <li>Booleans evaluate to the value of the boolean</li>
+      <li>Numbers evaluate to false if <code>+0</code>, <code>-0</code>, or <code>NaN</code>, otherwise <code>true</code></li>
+      <li>Strings evaluate to false if an empty string <code>''</code>, otherwise <code>true</code></li>
+    </ul>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/comparison-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use shortcuts when possible.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/comparison-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-typecasting">
+  <div class="col">
+    <h3>Type Casting &amp; Coercion</h3>
+
+    <p>Strings:</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/typecasting-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use <code>parseInt</code> for Numbers and <strong>always with a radix</strong> for type casting.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/typecasting-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Booleans:</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/typecasting-3.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-naming">
+  <div class="col">
+    <h3>Naming Conventions</h3>
+
+    <p>Avoid single letter names. Be descriptive with your naming.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/naming-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use camelCase when naming objects, functions, and instances.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/naming-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use PascalCase when naming constructors or classes.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/naming-3.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use a leading underscore <code>_</code> when naming private properties or methods.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/naming-4.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Don't save references to <code>this</code>. Use arrow functions or <code>Function#bind</code>.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/naming-5.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>If your file exports a single class, your filename should be exactly the name of the class.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/naming-6.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use camelCase when you export-default a function. Your filename should be identical to your function's name.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/naming-7.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-comments">
+  <div class="col">
+    <h3>Comments</h3>
+
+    <p>Use <code>/** ... */</code> for multi-line comments. Include a description, specify types and values for all parameters and return values.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/comments-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use <code>//</code> for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/comments-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Prefixing your comments with <code>FIXME</code> or <code>TODO</code> helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable.</p>
+    <p>Use <code>// FIXME:</code> to annotate problems.</p>
+    <p>Use <code>// TODO:</code> to annotate solutions to problems.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/comments-3.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-destructuring">
+  <div class="col">
+    <h3>Destructuring</h3>
+
+    <p>Use object destructuring when accessing and using multiple properties of an object.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/destructuring-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use array destructuring.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/destructuring-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use object destructuring for multiple return values, not array destructuring.</p>
+    <p>You can add new properties over time or change the order of things without breaking call sites.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/destructuring-3.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-modules">
+  <div class="col">
+    <h3>Module Imports</h3>
+
+    <p>Always use modules (<code>import</code>/<code>export</code>) over a non-standard module system. You can always transpile to your preferred module system.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/modules-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Do not use wildcard imports.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/modules-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Import statements should be grouped in the following order:</p>
+    <ol>
+      <li>Standard library imports <em>(if a standard library exists)</em></li>
+      <li>Third party library imports</li>
+      <li>Local imports <em>(imports specific to this application or library)</em></li>
+    </ol>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/modules-3.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-strings">
+  <div class="col">
+    <h3>Strings</h3>
+
+    <p>Use single quotes <code>''</code> for strings.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/strings-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>When programmatically building up strings, use template strings instead of concatenation.</p>
+    <p>Template strings give you a readable, concise syntax with proper newlines and string interpolation features.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/strings-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-arrays">
+  <div class="col">
+    <h3>Arrays</h3>
+
+    <p>Use the literal syntax for array creation.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/arrays-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use <code>Array#push</code> instead of direct assignment to add items to an array.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/arrays-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use array spreads <code>...</code> to copy arrays.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/arrays-3.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>To convert an array-like object to an array, use <code>Array#from</code>.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/arrays-4.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-functions">
+  <div class="col">
+    <h3>Functions</h3>
+
+    <p>Use function declarations instead of function expressions.</p>
+    <p>Function declarations are named, so they're easier to identify in call stacks. Also, the whole body of a function declaration is hoisted, whereas only the reference of a function expression is hoisted. This rule makes it possible to always use Arrow Functions in place of function expressions.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/functions-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Immediately-invoked function expressions:</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/functions-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Never declare a function in a non-function block (<code>if</code>, <code>while</code>, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/functions-3.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Never name a parameter <code>arguments</code>. This will take precedence over the <code>arguments</code> object that is given to every function scope.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/functions-4.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Never use <code>arguments</code>, opt to use rest syntax <code>...</code> instead.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/functions-5.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use default parameter syntax rather than mutating function arguments.</p>
+    <p>Use <code>Object#assign</code> or <code>jQuery#extend</code> to set default object values.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/functions-6.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>When you must use function expressions (as when passing an anonymous function), use <strong>arrow function notation</strong>.</p>
+    <p>It creates a version of the function that executes in the context of <code>this</code>, which is usually what you want, and is a more concise syntax.</p>
+    <p>If you have a fairly complicated function, you might move that logic out into its own function declaration.</p>
+    <p>If the function body fits on one line and there is only a single argument, feel free to omit the braces and parentheses, and use the implicit return. Otherwise, add the parentheses, braces, and use a return statement.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/functions-7.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-objects">
+  <div class="col">
+    <h3>Objects</h3>
+
+    <p>Use the literal syntax for object creation.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/objects-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Don't use <a href="http://es5.github.io/#x7.6.1">reserved words</a> as keys. It won't work in IE8. <a href="https://github.com/airbnb/javascript/issues/61">More info</a>.</p>
+    <p>Use readable synonyms in place of reserved words.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/objects-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use computed property names when creating objects with dynamic property names.</p>
+    <p>They allow you to define all the properties of an object in one place.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/objects-3.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use object method shorthand.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/objects-4.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use property value shorthand.</p>
+    <p>Group your shorthand properties at the beginning of your object declaration.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/objects-5.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use dot notation when accessing properties.</p>
+    <p>Use subscript notation <code>[]</code> when accessing properties with a variable.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/objects-6.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-classes">
+  <div class="col">
+    <h3>Classes</h3>
+
+    <p>Always use <code>class</code>. Avoid manipulating <code>prototype</code> directly.</p>
+    <p><code>class</code> syntax is more concise and easier to reason about.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/classes-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Use <code>extends</code> for inheritance.</p>
+    <p>It is a built-in way to inherit prototype functionality without breaking <code>instanceof</code>.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/classes-2.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>It's okay to write a custom <code>toString()</code> method, just make sure it works successfully and causes no side effects.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/classes-3.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Accessor functions for properties are not required.</p>
+    <p>If you do make accessor functions use <code>getVal()</code> and <code>setVal('hello')</code>.</p>
+    <p>If the property is a boolean, use <code>isVal()</code> or <code>hasVal()</code>.</p>
+    <p>It's okay to create <code>get()</code> and <code>set()</code> functions, but be consistent.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/classes-4.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Getters and setters should not be used when <a href="https://babeljs.io/docs/advanced/caveats/#getters-setters-8-and-below-">supporting IE8 and below</a>.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/classes-5.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-events">
+  <div class="col">
+    <h3>Events</h3>
+
+    <p>When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/events-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+
+<div class="section" id="javascript-jquery">
+  <div class="col">
+    <h3>jQuery</h3>
+
+    <p>Prefix jQuery object variables with a <code>$</code>.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/jquery-1.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section">
+  <div class="col">
+    <p>Cache jQuery lookups.</p>
+  </div>
+
+  <div class="col">
+    {% highlight js %}{% include javascript/jquery-2.js %}{% endhighlight %}
+  </div>
+</div>
+

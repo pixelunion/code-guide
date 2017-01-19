@@ -295,6 +295,21 @@ pre code {
 }
 
 
+.golden-rule {
+  background-color: #34A4B9;
+  color: #FFF;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.golden-rule h2 {
+  color: inherit;
+}
+
+.golden-rule p {
+  font-style: italic;
+}
+
 /*
  * Sections
  */

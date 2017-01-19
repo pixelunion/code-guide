@@ -85,6 +85,7 @@ body {
 a {
   color: #04DBC0;
   text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
 }
 
 a:hover {
@@ -205,11 +206,14 @@ pre code {
     width: 100%;
     table-layout: fixed;
   }
+
   .col {
     display: table-cell;
+    width: 25%;
     padding: 3rem;
     vertical-align: top;
   }
+
   .col + .col {
     border-top: 0;
   }
@@ -228,6 +232,16 @@ pre code {
 .toc .col {
   padding: 2rem 1rem;
   font-size: 16px;
+}
+
+.toc a {
+  color: #42465f;
+  border-bottom: 2px solid #f2f2f7;
+}
+
+.toc a:hover {
+  text-decoration: none;
+  opacity: 0.5;
 }
 
 .toc ul {

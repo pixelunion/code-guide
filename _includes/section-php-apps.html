@@ -1,0 +1,94 @@
+<div class="heading" id="php">
+  <h2>PHP</h2>
+</div>
+
+<div class="section" id="php-introduction">
+  <div class="col">
+    <h3>Introduction</h3>
+    <p>Outside of the WordPress environment, Pixel Union follows PSR-2 standards for PHP development. This is an overview of the higher-level rules for PSR-2, for the full set of standards please reference the <a href="http://www.php-fig.org/psr/psr-2/" target="_blank">PHP-FIG docs</a>.</p>
+
+    <p>the PSR-2 Standard extends the PSR-1 Standard, documented <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md" target="_blank">here</a>.</p>
+
+    <p><strong>Note:</strong> The one way in which we diverge from PSR-2 is that we use 2 spaces for indents instead of 4. This is to maintain consistency between the other code styles, which are all 2 spaces.</p>
+  </div>
+</div>
+
+<div class="section" id="php-basics">
+  <div class="col">
+    <h3>Basics</h3>
+    <ul>
+      <li>Use one blank line after the namespace declaration, one blank line after the block of <code>use</code> declarations.</li>
+      <li>Opening braces for both classes and methods should go on the next line, and closing braces should go on the next line after the body.</li>
+      <li>Visibility must be declared on all properties and methods; <code>abstract</code> and <code>final</code> should be declared before the visibility; <code>static</code> should be declared after the visibility.</li>
+      <li>Class names should be declared in <code>PascalCase</code>.</li>
+      <li>Method names should be declared in <code>camelCase</code>.</li>
+      <li>Class constants should be declared in all uppercase with underscore separators.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight php %}{% include php-apps/basics.php %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="php-namespace-use">
+  <div class="col">
+    <h3>Namespace and Use Declarations</h3>
+    <ul>
+      <li>When present, there should be one blank line after the <code>namespace</code> declaration.</li>
+      <li>When present, all <code>use</code> declarations should go after the <code>namespace</code> declaration.</li>
+      <li>There must be one <code>use</code> keyword per declaration.</li>
+      <li>There must be one blank line after the <code>use</code> block.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight php %}{% include php-apps/use-namespace.php %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="php-methods-functions">
+  <div class="col">
+    <h3>Method and Function Calls</h3>
+    <p>When making a method or function call:</p>
+    <ul>
+      <li>There should not be a space between the method or function name and the opening parenthesis.</li>
+      <li>The only spaces within the parentheses should be between comma-separated arguments.</li>
+    </ul>
+    <p>Argument lists can be split across multiple lines, where each subsequent line is indented once. When doing so, the first item in the list should be on its own line, with only one argument per line.
+  </div>
+  <div class="col">
+    {% highlight php %}{% include php-apps/methods-functions.php %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="php-control-structures">
+  <div class="col">
+    <h3>Control Structures</h3>
+    <p>The general style rules for control structures are as follows:</p>
+    <ul>
+      <li>One space after the control structure keyword.</li>
+      <li>No spaces after the opening parenthesis or before the closing parenthesis.</li>
+      <li>One space between the closing parenthesis and the opening brace.</li>
+      <li>The structure body should be indented once.</li>
+      <li>The closing brace should be on the next line after the body.</li>
+    </ul>
+    <p>The body of each structure should be enclosed by braces. This standardizes how the structures look, and reduces the likelihood of introducing errors as new lines get added to the body.</p>
+  </div>
+  <div class="col">
+    {% highlight php %}{% include php-apps/control-structures.php %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="php-closures">
+  <div class="col">
+    <h3>Closures</h3>
+    <ul>
+      <li>Closures should be declared with a space after the <code>function</code> keyword, and a space before and after the <code>use</code> keyword.</li>
+      <li>No spaces within the parentheses, except between comma-separated arguments.</li>
+      <li>Arguments with default values should go at the end of the argument list.</li>
+    </ul>
+    <p>Like methods and functions, argument lists can be spread across multiple lines, using the same line-break and indentation style.</p>
+  </div>
+  <div class="col">
+    {% highlight php %}{% include php-apps/closures.php %}{% endhighlight %}
+  </div>
+</div>

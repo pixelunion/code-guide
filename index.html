@@ -2,210 +2,159 @@
 layout: default
 ---
 
+<div class="golden-rule">
+  <h2>The Golden rule</h2>
+  <p>&ldquo;Every line of code should appear to be written by a single person, no matter the number of contributors.&rdquo;</p>
+</div>
 
 <div class="heading" id="toc">
   <h2>Table of contents</h2>
 </div>
-<div class="section toc">
-  <div class="col">
-    <h4><a href="#pxu">Shop Talk</a></h4>
-    <ul>
-      <li><a href="#pxu-golden-rule">The Golden Rule</a></li>
-      <li><a href="#pxu-browser-support">Browser Support</a></li>
-      <li><a href="#pxu-peer-review">Peer Review</a></li>
-    </ul>
-  </div>
-  <div class="col">
-    <h4><a href="#html">HTML</a></h4>
-    <ul>
-      <li><a href="#html-syntax">Syntax</a></li>
-      <li><a href="#html-doctype">HTML5 doctype</a></li>
-      <li><a href="#html-lang">Language attribute</a></li>
-      <li><a href="#html-encoding">Character encoding</a></li>
-      <li><a href="#html-ie-compatibility-mode">Internet Explorer compatibility mode</a></li>
-      <li><a href="#html-style-script">CSS and JavaScript includes</a></li>
-      <li><a href="#html-practicality">Practicality over purity</a></li>
-      <li><a href="#html-attribute-order">Attribute order</a></li>
-      <li><a href="#html-boolean-attributes">Boolean attributes</a></li>
-      <li><a href="#html-reducing-markup">Reducing markup</a></li>
-      <li><a href="#html-javascript">JavaScript generated markup</a></li>
-    </ul>
-  </div>
-  <div class="col">
-    <h4><a href="#liquid">Liquid</a></h4>
-    <ul>
-      <li><a href="#liquid-intro">An Introduction to Shopify</a></li>
-      <li><a href="#liquid-syntax">Syntax</a></li>
-      <li><a href="#liquid-whitespace">Whitespace in Expressions and Statements</a></li>
-      <li><a href="#liquid-variables">Variables</a></li>
-      <li><a href="#liquid-debugging">Debugging Tips</a></li>
-    </ul>
-  </div>
-  <div class="col">
-    <h4><a href="#sass">Sass</a></h4>
-    <ul>
-      <li><a href="#sass-syntax">Syntax</a></li>
-      <li><a href="#sass-selectors">Selectors</a></li>
-      <li><a href="#sass-nesting">Nesting</a></li>
-      <li><a href="#sass-variables">Variables</a></li>
-      <li><a href="#sass-includes-extends">@includes vs @extends</a></li>
-      <li><a href="#sass-comments">Comments</a></li>
-      <li><a href="#sass-media-queries">Media query placement</a></li>
-      <li><a href="#sass-single-declarations">Rules with single declarations</a></li>
-      <li><a href="#sass-shorthand">Shorthand notation</a></li>
-      <li><a href="#sass-classes">Classes</a></li>
-      <li><a href="#sass-organization">Organization</a></li>
-      <li><a href="#sass-maintainability">Maintainability</a></li>
-      <li><a href="#sass-declaration-order">Declaration order</a></li>
-    </ul>
-  </div>
-</div>
-<div class="section toc">
-  <div class="col">
-    <h4><a href="#javascript">JavaScript (ES6)</a></h4>
-    <ul>
-      <li><a href="#javascript-whitespace">Syntax</a></li>
-      <li><a href="#javascript-variables">Variables</a></li>
-      <li><a href="#javascript-comparison">Comparison</a></li>
-      <li><a href="#javascript-typecasting">Type casting</a></li>
-      <li><a href="#javascript-naming">Naming conventions</a></li>
-      <li><a href="#javascript-comments">Comments</a></li>
-      <li><a href="#javascript-destructuring">Destructuring</a></li>
-      <li><a href="#javascript-modules">Modules</a></li>
-      <li><a href="#javascript-strings">Strings</a></li>
-      <li><a href="#javascript-arrays">Arrays</a></li>
-      <li><a href="#javascript-functions">Functions</a></li>
-      <li><a href="#javascript-objects">Objects</a></li>
-      <li><a href="#javascript-classes">Classes</a></li>
-      <li><a href="#javascript-events">Events</a></li>
-      <li><a href="#javascript-jquery">jQuery</a></li>
-    </ul>
-  </div>
-  <div class="col">
-    <h4><a href="#coffee">CoffeeScript</a></h4>
-    <ul>
-      <li><a href="#coffee-code-layout">Code layout</a></li>
-      <li><a href="#coffee-imports">Module Imports</a></li>
-      <li><a href="#coffee-whitespace">Whitespace in Expressions and Statements</a></li>
-      <li><a href="#coffee-comments">Comments</a></li>
-      <li><a href="#coffee-naming">Naming Conventions</a></li>
-      <li><a href="#coffee-functions">Functions</a></li>
-      <li><a href="#coffee-strings">Strings</a></li>
-      <li><a href="#coffee-conditionals">Conditionals</a></li>
-      <li><a href="#coffee-looping">Looping and Comprehensions</a></li>
-      <li><a href="#coffee-annotations">Annotations</a></li>
-      <li><a href="#coffee-miscellaneous">Miscellaneous</a></li>
-    </ul>
-  </div>
-  <div class="col">
-    <h4><a href="#php">PHP</a></h4>
-    <ul>
-      <li><a href="#php-introduction">Introduction</a></li>
-      <li><a href="#php-quotes">Single and Double Quotes</a></li>
-      <li><a href="#php-indentation">Indentation</a></li>
-      <li><a href="#php-brace-style">Brace Style</a></li>
-      <li><a href="#php-function-guards">Function Guards</a></li>
-      <li><a href="#php-regular-expressions">Regular Expressions</a></li>
-      <li><a href="#php-spaces">Space Usage</a></li>
-      <li><a href="#php-sql-statements">Formatting SQL statements</a></li>
-      <li><a href="#php-database-queries">Database Queries</a></li>
-      <li><a href="#php-naming">Naming Conventions</a></li>
-      <li><a href="#php-self-explanatory">Self-Explanatory Flag Values for Function Arguments</a></li>
-      <li><a href="#php-ternary-operator">Ternary Operator</a></li>
-      <li><a href="#php-yoda-conditions">Yoda Conditions</a></li>
-      <li><a href="#php-miscellaneous">Miscellaneous</a></li>
-    </ul>
-  </div>
-
-  <div class="col">
-    <h4><a href="#git">Git</a></h4>
-    <ul>
-      <li><a href="#git-introduction">An introduction to Git</a></li>
-      <li><a href="#git-repos">Repo Naming</a></li>
-      <li><a href="#git-setup">Setup</a></li>
-      <li><a href="#git-branches">Branches and Pull Requests</a></li>
-      <li><a href="#git-commits">Commits</a></li>
-      <li><a href="#git-pushing">Pushing</a></li>
-      <li><a href="#git-merging">Merging</a></li>
-      <li><a href="#git-tagging">Tagging and Releasing</a></li>
-    </ul>
+<div class="section">
+  <div class="toc">
+    <div class="col">
+      <h4><a href="#html">HTML</a></h4>
+      <ul>
+        <li><a href="#html-syntax">Syntax</a></li>
+        <li><a href="#html-doctype">HTML5 doctype</a></li>
+        <li><a href="#html-lang">Language attribute</a></li>
+        <li><a href="#html-encoding">Character encoding</a></li>
+        <li><a href="#html-ie-compatibility-mode">Internet Explorer compatibility mode</a></li>
+        <li><a href="#html-style-script">CSS and JavaScript includes</a></li>
+        <li><a href="#html-practicality">Practicality over purity</a></li>
+        <li><a href="#html-attribute-order">Attribute order</a></li>
+        <li><a href="#html-boolean-attributes">Boolean attributes</a></li>
+        <li><a href="#html-reducing-markup">Reducing markup</a></li>
+        <li><a href="#html-javascript">JavaScript generated markup</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4><a href="#sass">Sass</a></h4>
+      <ul>
+        <li><a href="#sass-syntax">Syntax</a></li>
+        <li><a href="#sass-selectors">Selectors</a></li>
+        <li><a href="#sass-nesting">Nesting</a></li>
+        <li><a href="#sass-variables">Variables</a></li>
+        <li><a href="#sass-includes-extends">@includes vs @extends</a></li>
+        <li><a href="#sass-comments">Comments</a></li>
+        <li><a href="#sass-media-queries">Media query placement</a></li>
+        <li><a href="#sass-single-declarations">Rules with single declarations</a></li>
+        <li><a href="#sass-shorthand">Shorthand notation</a></li>
+        <li><a href="#sass-classes">Classes</a></li>
+        <li><a href="#sass-organization">Organization</a></li>
+        <li><a href="#sass-maintainability">Maintainability</a></li>
+        <li><a href="#sass-declaration-order">Declaration order</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4><a href="#javascript">JavaScript (ES6)</a></h4>
+      <ul>
+        <li><a href="#javascript-whitespace">Syntax</a></li>
+        <li><a href="#javascript-variables">Variables</a></li>
+        <li><a href="#javascript-comparison">Comparison</a></li>
+        <li><a href="#javascript-typecasting">Type casting</a></li>
+        <li><a href="#javascript-naming">Naming conventions</a></li>
+        <li><a href="#javascript-comments">Comments</a></li>
+        <li><a href="#javascript-destructuring">Destructuring</a></li>
+        <li><a href="#javascript-modules">Modules</a></li>
+        <li><a href="#javascript-strings">Strings</a></li>
+        <li><a href="#javascript-arrays">Arrays</a></li>
+        <li><a href="#javascript-functions">Functions</a></li>
+        <li><a href="#javascript-objects">Objects</a></li>
+        <li><a href="#javascript-classes">Classes</a></li>
+        <li><a href="#javascript-events">Events</a></li>
+        <li><a href="#javascript-jquery">jQuery</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4><a href="#liquid">Liquid</a></h4>
+      <ul>
+        <li><a href="#liquid-intro">An Introduction to Shopify</a></li>
+        <li><a href="#liquid-syntax">Syntax</a></li>
+        <li><a href="#liquid-whitespace">Whitespace in Expressions and Statements</a></li>
+        <li><a href="#liquid-variables">Variables</a></li>
+        <li><a href="#liquid-debugging">Debugging Tips</a></li>
+      </ul>
+    </div>
   </div>
 </div>
-
-<div class="heading" id="pxu">
-  <h2>Shop Talk</h2>
-</div>
-
-<div class="section" id="pxu-golden-rule">
-  <div class="col">
-    <h2>Golden rule</h2>
-    <p>For additions or contributions to this Code Guide, please <a href="https://github.com/PixelUnion/code-guide/issues/new">open an issue on GitHub</a>.</p>
+<div class="section">
+  <div class="toc">
+    <div class="col">
+      <h4><a href="#php">PHP</a></h4>
+      <ul>
+        <li><a href="#php-introduction">Introduction</a></li>
+        <li><a href="#php-basics">Basics</a></li>
+        <li><a href="#php-namespace-use">Namespace and Use Declarations</a></li>
+        <li><a href="#php-methods-functions">Methods and Function Calls</a></li>
+        <li><a href="#php-control-structures">Control Structures</a></li>
+        <li><a href="#php-closures">Closures</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4><a href="#php-wp">WordPress</a></h4>
+      <ul>
+        <li><a href="#php-wp-introduction">Introduction</a></li>
+        <li><a href="#php-wp-quotes">Single and Double Quotes</a></li>
+        <li><a href="#php-wp-indentation">Indentation</a></li>
+        <li><a href="#php-wp-brace-style">Brace Style</a></li>
+        <li><a href="#php-wp-function-guards">Function Guards</a></li>
+        <li><a href="#php-wp-regular-expressions">Regular Expressions</a></li>
+        <li><a href="#php-wp-spaces">Space Usage</a></li>
+        <li><a href="#php-wp-sql-statements">Formatting SQL statements</a></li>
+        <li><a href="#php-wp-database-queries">Database Queries</a></li>
+        <li><a href="#php-wp-naming">Naming Conventions</a></li>
+        <li><a href="#php-wp-self-explanatory">Self-Explanatory Flag Values for Function Arguments</a></li>
+        <li><a href="#php-wp-ternary-operator">Ternary Operator</a></li>
+        <li><a href="#php-wp-yoda-conditions">Yoda Conditions</a></li>
+        <li><a href="#php-wp-miscellaneous">Miscellaneous</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4><a href="#coffee">CoffeeScript</a></h4>
+      <ul>
+        <li><a href="#coffee-code-layout">Code layout</a></li>
+        <li><a href="#coffee-imports">Module Imports</a></li>
+        <li><a href="#coffee-whitespace">Whitespace in Expressions and Statements</a></li>
+        <li><a href="#coffee-comments">Comments</a></li>
+        <li><a href="#coffee-naming">Naming Conventions</a></li>
+        <li><a href="#coffee-functions">Functions</a></li>
+        <li><a href="#coffee-strings">Strings</a></li>
+        <li><a href="#coffee-conditionals">Conditionals</a></li>
+        <li><a href="#coffee-looping">Looping and Comprehensions</a></li>
+        <li><a href="#coffee-annotations">Annotations</a></li>
+        <li><a href="#coffee-miscellaneous">Miscellaneous</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4><a href="#git">Git</a></h4>
+      <ul>
+        <li><a href="#git-introduction">An introduction to Git</a></li>
+        <li><a href="#git-repos">Repo Naming</a></li>
+        <li><a href="#git-setup">Setup</a></li>
+        <li><a href="#git-branches">Branches and Pull Requests</a></li>
+        <li><a href="#git-commits">Commits</a></li>
+        <li><a href="#git-pushing">Pushing</a></li>
+        <li><a href="#git-merging">Merging</a></li>
+        <li><a href="#git-tagging">Tagging and Releasing</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="col">
-    <blockquote>
-      <p>Every line of code should appear to be written by a single person, no matter the number of contributors.</p>
-    </blockquote>
-  </div>
-</div>
-
-<div class="section" id="pxu-browser-support">
-  <div class="col">
-    <h3>Browser Support</h3>
-
-    <h4><a href="http://themes.shopify.com/services/themes/guidelines#checklist">Shopify</a></h4>
-    <ul>
-      <li>Firefox (latest)</li>
-      <li>Chrome (latest)</li>
-      <li>Safari (latest)</li>
-      <li>IE8+</li>
-      <li>Mobile Safari 6+</li>
-    </ul>
-
-    <h4>WordPress, Tumblr &amp; Ghost</h4>
-    <ul>
-      <li>Firefox (latest)</li>
-      <li>Chrome (latest)</li>
-      <li>Safari (latest)</li>
-      <li>IE9+</li>
-      <li>Mobile Safari 6+</li>
-    </ul>
-
-    <p>We do not "support" the following browsers:</p>
-    <ul>
-      <li>Opera</li>
-      <li>Anything not listed above</li>
-    </ul>
-    <p>Not supporting doesn't mean a broken website, it means a lack of testing.</p>
-  </div>
-
-</div>
-
-<div class="section" id="pxu-peer-review">
-  <div class="col">
-    <h3>Peer Review</h3>
-
-    <p>We don't release code that hasn't been peer reviewed. Whether it's a two line change to some CSS or a complete refactoring of a JavaScript function, your pull request will always be reviewed by one of your peers.</p>
-
-    <p>Since all of your code is written on a <a href="#git-branches">different branch</a> than master anyways, peer review is as simple as opening up a pull request and assigning it to somebody to review.<p>
-
-    <h4>The Exception</h4>
-
-    <p>The <em>only</em> exception to committing code that isn't up to the standards in this document is when working on an older theme. It's preferable to keep code consistent to the theme that you're working on even if that code isn't up to our current standards (within reason). It's important to document these decisions in your Pull Request.</p>
-
-    <p>If the theme still has shelf life (not going to be archived any time soon), create a new task detailing the changes that should be made to bring the theme up to our current standards.</p>
-  </div>
-
 </div>
 
 {% include section-html.html %}
 
-{% include section-liquid.html %}
+{% include section-sass.html %}
 
 {% include section-javascript.html %}
 
-{% include section-coffeescript.html %}
+{% include section-liquid.html %}
 
-{% include section-php.html %}
+{% include section-php-apps.html %}
+
+{% include section-php-wordpress.html %}
+
+{% include section-coffeescript.html %}
 
 {% include section-git.html %}
 
